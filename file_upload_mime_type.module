@@ -1,4 +1,4 @@
-function fileupload_mime_type($filename) {
+function file_upload_mime_type($filename) {
 		global $base_url;
         $mime_types = array(
             'pdf' => 'application/pdf',
