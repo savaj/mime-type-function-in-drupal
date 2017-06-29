@@ -1,0 +1,35 @@
+function fileupload_mime_type($filename) {
+		global $base_url;
+        $mime_types = array(
+            'pdf' => 'application/pdf',
+            'doc' => 'application/msword',
+			'docx' => 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+			'xlsx' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+            'xls' => 'application/vnd.ms-excel'   
+        );
+			
+        $ext = strtolower(array_pop(explode('.',$filename)));
+       if (array_key_exists($ext, $mime_types)) {
+            //return $mime_types[$ext];
+			if($mime_types[$ext] == "application/pdf")
+			{
+				return '<img alt="doc" style="width:15px;height:15px;" src="'.$base_url . '/' . path_to_theme() . '/images/pdf.png" />';
+			}
+			else if($mime_types[$ext] == "application/msword")
+			{
+				return '<img alt="doc" style="width:15px;height:15px;" src="'.$base_url . '/' . path_to_theme() . '/images/docx.png" />';
+			}
+			else if($mime_types[$ext] == "application/vnd.openxmlformats-officedocument.wordprocessingml.document")
+			{
+				return '<img alt="doc" style="width:15px;height:15px;" src="'.$base_url . '/' . path_to_theme() . '/images/docx.png" />';
+			}
+			else if($mime_types[$ext] == "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+			{
+				return '<img alt="doc" style="width:15px;height:15px;" src="'.$base_url . '/' . path_to_theme() . '/images/xls.png" />';
+			}
+			else if($mime_types[$ext] == "application/vnd.ms-excel")
+			{
+				return '<img alt="doc" style="width:15px;height:15px;" src="'.$base_url . '/' . path_to_theme() . '/images/xls.png" />';
+			}
+        }
+}
