@@ -10,7 +10,6 @@ function file_upload_mime_type($filename) {
 			
         $ext = strtolower(array_pop(explode('.',$filename)));
        if (array_key_exists($ext, $mime_types)) {
-            //return $mime_types[$ext];
 			if($mime_types[$ext] == "application/pdf")
 			{
 				return '<img alt="doc" style="width:15px;height:15px;" src="'.$base_url . '/' . path_to_theme() . '/images/pdf.png" />';
